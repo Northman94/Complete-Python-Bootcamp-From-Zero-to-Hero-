@@ -2,6 +2,7 @@
 # Control Flow syntax makes use of colons " : " & indentation (whitespace).
 # Syntax of an if statement:
 
+
 if True:
     print("It's True")
 
@@ -31,3 +32,6 @@ elif loc == "Shop":
 else:
     print("Staying Home.")
 # Buy some Milk.
+
+
+
