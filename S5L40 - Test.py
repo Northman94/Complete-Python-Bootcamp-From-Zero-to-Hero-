@@ -122,21 +122,3 @@ print(f"{iList8} \n")
 iList9 = [emt[0] for emt in str8.split()]
 
 print(f"{iList9} \n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
