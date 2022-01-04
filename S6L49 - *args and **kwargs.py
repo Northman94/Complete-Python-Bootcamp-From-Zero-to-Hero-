@@ -140,13 +140,10 @@ def myFunc10(word):
     out = []
 
     for i in range(len(word)):
-
         if i % 2 == 0:
             out.append(word[i].lower())
-
         else:
             out.append(word[i].upper())
-
     print(''.join(out))
 
 
