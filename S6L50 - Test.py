@@ -299,5 +299,81 @@ def summer_69_2(arr):
 
 # - - - - - - - - - - - - - - - - - -
 
+# SPY GAME: Write a function that takes in a list of integers and
+# returns True if it contains 007 in order
+
+def spy_game(nums):
+    spyCode = []
+
+    for r in nums:
+        if r == 0 or r == 7:
+            spyCode.append(r)
+        else:
+            continue
+    print(spyCode)
+
+    a = [str(int) for int in spyCode]
+    b = "".join(a)
+
+    print(b)
+
+    if "007" in b:
+        print("True")
+    else:
+        print("False")
+
+print(spy_game([1,2,4,0,0,0,7,5]))
+print(spy_game([1,0,2,0,4,0,5,7]))
+print(spy_game([1,7,2,0,4,5,0]))
+
+
+# Teacher ways:
+
+def spy_game2(numz):
+    bond = [0,0,7,'X']
+
+    for nx in numz:
+        if numz == bond[0]:
+            bond.pop(0)
+    return len(bond) == 1
+
+# [0,7,"X"]
+# [7,"X"]
+# ["X"] length = 1
+
+
+# - - - - - - - - - - - - - - - - - -
+
+# COUNT PRIMES: Write a function that returns the number of prime numbers
+# that exist up to and including a given number. Devides by it self & 1
+
+def count_primes(num):
+    counter = 2
+    ammountOfZero = 0
+
+    for nmb in range(num):
+
+        print(f"{num} % {counter} = {num % counter}")
+
+        if num % counter == 0:
+            ammountOfZero += 1
+
+        if ammountOfZero >= 2:
+            print("Not Prime")
+            break
+
+        if num != counter:
+            counter += 1
+        else:
+            print("Prime")
+            break
+
+
+count_primes(10)
+count_primes(11)
+
+# - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 
 
