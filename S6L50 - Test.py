@@ -1,4 +1,4 @@
-'''
+
 
 def lesser_of_two_evens(a, b):
     if a % 2 == 0 and b % 2 == 0:
@@ -253,7 +253,7 @@ def blackjack3(a,b,c):
         return "BUST"
 
 # - - - - - - - - - - - - - - - - - -
-'''
+
 # SUMMER OF '69: Return the sum of the numbers in the array,
 # except ignore sections of numbers starting with a 6 and extending
 # to the next 9 (every 6 will be followed by at least one 9).
@@ -352,28 +352,94 @@ def count_primes(num):
     ammountOfZero = 0
 
     for nmb in range(num):
+        if num < 2:
+            print("NotPrime \n")
+            break
 
         print(f"{num} % {counter} = {num % counter}")
 
         if num % counter == 0:
             ammountOfZero += 1
 
-        if ammountOfZero >= 2:
-            print("Not Prime")
+        if ammountOfZero >= 2 or num < 2:
+            print("Not Prime \n")
             break
 
         if num != counter:
             counter += 1
         else:
-            print("Prime")
+            print("Prime \n")
             break
 
 
 count_primes(10)
 count_primes(11)
 
+# 10 % 2 = 0
+# 10 % 3 = 1
+# 10 % 4 = 2
+# 10 % 5 = 0
+# Not Prime
+
+# 11 % 2 = 1
+# 11 % 3 = 2
+# 11 % 4 = 3
+# 11 % 5 = 1
+# 11 % 6 = 5
+# 11 % 7 = 4
+# 11 % 8 = 3
+# 11 % 9 = 2
+# 11 % 10 = 1
+# 11 % 11 = 0
+# Prime
+
+# 100 % 2 = 0
+# 100 % 3 = 1
+# 100 % 4 = 0
+# Not Prime
+
+
+# Teacher's way:
+
+def count_primes2(numb):
+    if numb < 2:
+        return 0
+
+    # A List storing our prime numbs
+    primes = [2]
+    # Counter going up to "numb"
+    x = 3
+    # Check if x if Prime
+    while x < numb:
+        for y in range(3, x, 2): # Step size of 2
+            if x % y == 0:
+                x += 2
+                break
+        else: # Notice that else: is under (for). Not (if).
+            primes.append(x)
+            x += 2
+
+    print(primes)
+    return len(primes)
+
+
 # - - - - - - - - - - - - - - - - - - - - - - - -
 
+# (T):
+# JUST FOR FUN:
 
+# PRINT BIG: Write a function that takes in a single letter,
+# and returns a 5x5 representation of that letter
 
+def print_big(letter):
+    patters = {1: '  *  ', 2: ' * * ', 3: '*   *', 4: '*****', 5: '**** ', 6: '    * ', 7: ' *   ', 8: '*  * ',
+               9: '*    '}
+
+    alphabet = {'A': [1, 2, 4, 3, 3], 'B': [5, 3, 5, 3, 5], 'C': [4, 9, 9, 9, 4], 'D': [5, 3, 3, 3, 5],
+                'E': [4, 9, 4, 9, 4]}
+
+    for sequence in alphabet[letter.upper()]:
+        print(patters[sequence])
+
+print_big('E')
 
