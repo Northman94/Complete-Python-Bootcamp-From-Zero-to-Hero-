@@ -1,4 +1,6 @@
-
+# LESSER OF TWO EVENS: Write a function that returns the lesser
+# of two given numbers if both numbers are even, but returns the
+# greater if one or both numbers are odd
 
 def lesser_of_two_evens(a, b):
     if a % 2 == 0 and b % 2 == 0:
@@ -35,7 +37,10 @@ print(animal_crackers('Levelheaded Llama'))
 print(animal_crackers('Crazy Kangaroo'))
 
 #  - - - - - - - - - - - - - - - - - - - -
-print("\nn1 & n2:")
+# MAKES TWENTY: Given two integers, return True if the sum
+# of the integers is 20 or if one of the integers is 20.
+# If not, return False
+print("\n n1 & n2:")
 
 def makes_twenty(n1,n2):
     if n1 == 20 or n2 == 20:
@@ -55,7 +60,7 @@ def makes_twenty2(n1,n2):
 # - - - - - - - - - - - - - - - - - - - - - -
 
 
-# Make 1st & 4th letter CAPITAL:
+# OLD MACDONALD: Make 1st & 4th letter CAPITAL:
 def old_macdonald(name):
     first_letter = name[0]
     gap_before3 = name[1:3]
@@ -80,6 +85,7 @@ old_macdonald2("macdonald")
 
 # - - - - - - - - - - - - - - - - - - - - - -
 
+# MASTER YODA: Given a sentence, return a sentence with the words reversed
 def master_yoda(text):
     yodaList1 = text.split()
     yodaList2 = yodaList1[::-1]
@@ -119,7 +125,8 @@ print(almost_there(209))
 
 # - - - - - - - - - - - - - - - - - - - - - -
 
-# Given a list of ints, return True if the array contains a 3 next to a 3 somewhere
+# FIND 33: Given a list of ints, return True if
+# the array contains a 3 next to a 3 somewhere
 
 # Length counts from 1
 # Range - from 0
@@ -169,11 +176,11 @@ def has_3_3(nums3):
         if nums3[p:p+2] == [3, 3]:
             return True
     return  False
-
 # - - - - - - - - - - - - - - - - - - - - - -
 
 
-# PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+# PAPER DOLL: Given a string, return a string where for
+# every character in the original there are three characters
 # paper_doll('Hello') --> 'HHHeeellllllooo'
 # paper_doll('Mississippi') --> 'MMMiiissssssiiippppppiii'
 
@@ -196,7 +203,7 @@ def paper_doll2(text):
     for char in text:
         result += char * 3
     return result
-
+# - - - - - - - - - - - - - - - - - - - - - -
 
 
 # BLACKJACK: Given three integers between 1 and 11, if their sum
@@ -299,8 +306,8 @@ def summer_69_2(arr):
 
 # - - - - - - - - - - - - - - - - - -
 
-# SPY GAME: Write a function that takes in a list of integers and
-# returns True if it contains 007 in order
+# SPY GAME: Write a function that takes in a list of
+# integers and returns True if it contains 007 in order
 
 def spy_game(nums):
     spyCode = []
@@ -371,7 +378,6 @@ def count_primes(num):
             print("Prime \n")
             break
 
-
 count_primes(10)
 count_primes(11)
 
@@ -432,11 +438,11 @@ def count_primes2(numb):
 # and returns a 5x5 representation of that letter
 
 def print_big(letter):
-    patters = {1: '  *  ', 2: ' * * ', 3: '*   *', 4: '*****', 5: '**** ', 6: '    * ', 7: ' *   ', 8: '*  * ',
-               9: '*    '}
+    patters = {1: '  *  ', 2: ' * * ', 3: '*   *', 4: '*****', 5: '**** ',
+               6: '    * ', 7: ' *   ', 8: '*  * ', 9: '*    '}
 
-    alphabet = {'A': [1, 2, 4, 3, 3], 'B': [5, 3, 5, 3, 5], 'C': [4, 9, 9, 9, 4], 'D': [5, 3, 3, 3, 5],
-                'E': [4, 9, 4, 9, 4]}
+    alphabet = {'A': [1, 2, 4, 3, 3], 'B': [5, 3, 5, 3, 5], 'C': [4, 9, 9, 9, 4],
+                'D': [5, 3, 3, 3, 5], 'E': [4, 9, 4, 9, 4]}
 
     for sequence in alphabet[letter.upper()]:
         print(patters[sequence])
