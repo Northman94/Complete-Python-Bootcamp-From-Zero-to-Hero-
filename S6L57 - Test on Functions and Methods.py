@@ -72,7 +72,6 @@ up_low2('Hello Mr. Rogers, how are you this fine Tuesday?')
 
 # - = - = - = - = - = - = - = - = - = - = - = - = -
 # With Lambdas:
-
 def up_low3(st3):
     upperCases = len(list(filter(lambda uppers: uppers.isupper(), st3)))
     lowerCases = len(list(filter(lambda uppers: uppers.islower(), st3)))
@@ -85,7 +84,8 @@ up_low3('Hello Mr. Rogers, how are you this fine Tuesday?')
 
 
 # - = - = - = - = - = - = - = - = - = - = - = - = -
-# Write a Python function that takes a list and returns a new list with unique elements of the first list.
+# Write a Python function that takes a list and returns
+# a new list with unique elements of the first list.
 # Sample List : [1,1,1,1,2,2,3,3,3,3,4,5]
 # Unique List : [1, 2, 3, 4, 5]
 
@@ -185,9 +185,7 @@ is_pangram("The quick brown fox jumps over the lazy dog")
 
 # - = - = - = - = - = - = - = - = - = - = - = - = -
 # Teacher:
-
 import string
-
 
 def is_pangram2(str2, alphabet=string.ascii_lowercase):
     alphaset = set(alphabet)
