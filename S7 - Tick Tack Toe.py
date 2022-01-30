@@ -1,3 +1,6 @@
+# JupiterNotebook console output can be creared via:
+# from IPython.display import clear_output
+# clear_output()
 
 board_content = ['#','-','-','-','-','-','-','-','-','-']
 player1_turn = True
@@ -18,7 +21,7 @@ def player_input():
     x_sign = 'X'
     o_sign = 'O'
 
-    while player1 != x_sign or player1 != o_sign:
+    while not (player1 == x_sign or player1 == o_sign):
         player1 = input("Please pick a marker 'X' or 'O': \n")
 
         if player1 == x_sign:
@@ -50,10 +53,16 @@ def marker_place():
         # RANGE_CHECK:
         if choice.isdigit():  # == True:
             if int(choice) in acceptable_range:
-                within_range = True
+                if board_content[int(choice)] == "-":
+                    print(f"Board Content: {board_content[int(choice)]}")
+                    within_range = True
+                else:
+                    within_range = False
+                    print("Cell is already taken.")
             else:
                 within_range = False
                 print("Out of Range (0-10).")
+
     return int(choice) # while-loop
 
 
