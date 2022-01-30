@@ -1,7 +1,8 @@
 
 board_content = ['#','-','-','-','-','-','-','-','-','-']
 player1_turn = True
-
+game_on = True
+victory = False
 
 
 def display_board():
@@ -10,7 +11,6 @@ def display_board():
     print(board_content[7] + "|" + board_content[8] + "|" + board_content[9])
 
 # - = - = - = - = - = - = - = - = - = -
-
 
 def player_input():
     player1 = ''
@@ -32,15 +32,15 @@ def player_input():
         return (player1, player2)
 
 
-
 # - = - = - = - = - = - = - = - = - = -
+
 def marker_place():
     choice = "Wrong Value."
     acceptable_range = range(1,10) # 10 is not included
     within_range = False
 
-
     while choice.isdigit() == False or within_range == False:
+
         choice = input("Place a Number of a Cell (1-9) \n")
 
         # DIGIT_CHECK:
@@ -54,8 +54,7 @@ def marker_place():
             else:
                 within_range = False
                 print("Out of Range (0-10).")
-
-    return int(choice)
+    return int(choice) # while-loop
 
 
 # - = - = - = - = - = - = - = - = - = -
@@ -67,7 +66,7 @@ def gameon_choice():
     while choice not in ['Y', 'N']:
 
         # If we convert here, we'll get an Error of input
-        choice = input("Would you like to keep playeing? Y or N:")
+        choice = input("Would you like to keep playeing? Y or N: \n")
 
         if choice not in ['Y', 'N']:
 
@@ -89,27 +88,37 @@ def change_board(p1, p2, board_cell):
         board_content[board_cell] = p2
         return True
 
+
+
 # Victory Check:
 def victory_check():
     # Horizontal:
     if board_content[1] == board_content[2] and board_content[2] == board_content[3]:
-        return True
+        if board_content[2] == "X" or board_content[2] == "O":
+            return True
     elif board_content[4] == board_content[5] and board_content[5] == board_content[6]:
-        return True
+        if board_content[5] == "X" or board_content[5] == "O":
+            return True
     elif board_content[7] == board_content[8] and board_content[8] == board_content[9]:
-        return True
+        if board_content[8] == "X" or board_content[8] == "O":
+            return True
     # Vertical:
     elif board_content[1] == board_content[4] and board_content[4] == board_content[7]:
-        return True
+        if board_content[4] == "X" or board_content[4] == "O":
+            return True
     elif board_content[2] == board_content[5] and board_content[5] == board_content[8]:
-        return True
+        if board_content[5] == "X" or board_content[5] == "O":
+            return True
     elif board_content[3] == board_content[6] and board_content[6] == board_content[9]:
-        return True
+        if board_content[6] == "X" or board_content[6] == "O":
+            return True
     # Diagonal:
     elif board_content[1] == board_content[5] and board_content[5] == board_content[9]:
-        return True
+        if board_content[5] == "X" or board_content[5] == "O":
+            return True
     elif board_content[3] == board_content[5] and board_content[5] == board_content[7]:
-        return True
+        if board_content[5] == "X" or board_content[5] == "O":
+            return True
     else:
         return False
 
@@ -118,9 +127,7 @@ def victory_check():
 # - = - = - = - = - = - = - = - = - = -
 # Main Game Logic Scenario:
 # - = - = - = - = - = - = - = - = - = -
-# Variable for keep playing
-game_on = True
-victory = False
+
 
 #Start:
 display_board()
@@ -135,23 +142,25 @@ while game_on:
     position = marker_place() #return (1-9)
 
     # Update List content
-    change_board(player1_marker, player2_marker, position)
+    player1_turn = change_board(player1_marker, player2_marker, position)
     display_board()
 
 
 
     # Victory check:
     victory = victory_check()
-    player1_turn = victory
+
 
 
     if victory == True:
         if player1_turn:
-            print("Player 1 Won - Congrats!")
-            break
-        else:
             print("Player 2 Won - Congrats!")
             break
+        else:
+            print("Player 1 Won - Congrats!")
+            break
+
+
     # Still Playing?
     game_on = gameon_choice()
 
