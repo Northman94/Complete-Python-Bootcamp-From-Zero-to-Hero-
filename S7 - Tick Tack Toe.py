@@ -133,6 +133,7 @@ def victory_check():
 
 
 
+
 # - = - = - = - = - = - = - = - = - = -
 # Main Game Logic Scenario:
 # - = - = - = - = - = - = - = - = - = -
@@ -147,6 +148,7 @@ print(f"Player1: {player1_marker} & Player2: {player2_marker} \n")
 
 
 while game_on:
+
     # Player choose position
     position = marker_place() #return (1-9)
 
