@@ -1,3 +1,8 @@
+
+import webbrowser as wb
+wb.open('https://habr.com/ru/post/186608/')
+
+
 # Examples of ordinary Methods usage:
 my_list = [1,2,3]
 
