@@ -1,4 +1,16 @@
 
+# A way to get an error type:
+try:
+    a = 2 + "a"
+except Exception as e:
+    print(e)
+# unsupported operand type(s) for +: 'int' and 'str'
+
+
+
+
+
+
 try:
     result = 10 + '10'
 except:
