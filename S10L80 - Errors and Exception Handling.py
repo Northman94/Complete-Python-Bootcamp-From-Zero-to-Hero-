@@ -9,8 +9,6 @@ except Exception as e:
 
 
 
-
-
 try:
     result = 10 + '10'
 except:
