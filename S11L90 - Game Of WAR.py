@@ -16,7 +16,8 @@ import random
 
 suits = ('Hearts','Diamonds','Spades','Clubs')
 
-ranks = ('Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King','Ace')
+ranks = ('Two','Three','Four','Five','Six','Seven','Eight',
+                  'Nine','Ten','Jack','Queen','King','Ace')
 
 values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
                  'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
@@ -162,6 +163,10 @@ while game_on:
     round_num += 1
     print(f"Round - {round_num}.\n")
 
+    if round_num > 4000:
+        print(f"\n It's taking too long. Lets have a break.")
+        break
+
     # Player out of Cards check.
     if len(player_one.card_lst) == 0:
         print("Player 1 - Out of Cards. Player 2 Wins")
@@ -218,3 +223,11 @@ while game_on:
                     player_one_cards.append(player_one.remove_one())
                     player_two_cards.append(player_two.remove_one())
 
+
+
+# https://www.reddit.com/r/learnpython/comments/7ay83p/war_card_game/
+# https://codereview.stackexchange.com/questions/131174/war-card-game-using-classes
+# https://gist.github.com/damianesteban/6896120
+# https://lethain.com/war-card-game-in-python/
+# https://hectorpefo.github.io/2017-09-13-Card-Wars/
+# https://www.wimpyprogrammer.com/the-statistics-of-war-the-card-game
