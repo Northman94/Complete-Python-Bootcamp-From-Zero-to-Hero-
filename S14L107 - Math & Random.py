@@ -103,7 +103,7 @@ print(math.radians(180))
 
 import random
 
-random.randint(0,5) # Return random integer in range [a, b], including both end points.
+random.randint(0,5) # Returns random integer in range [a, b], including both end points.
 # 5
 
 
