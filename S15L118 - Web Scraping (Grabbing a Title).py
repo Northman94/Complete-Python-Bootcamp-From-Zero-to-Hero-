@@ -1,4 +1,4 @@
-
+# S15 L116 is in Conspect (General info)
 
 # Open e.g. Wikipedia. RMB on page empty space. View page source. (Win: Ctrl+U)
 # e.g. if I want to grab an Image. RMB on it. Inspect(Посмотреть код).
@@ -108,11 +108,4 @@ site_paragraph[0].getText()
 # 'This domain is for use in illustrative examples in documents.
 # You may use this\n    domain in literature without prior
 # coordination or asking for permission.'
-
-
-
-
-
-
-
 
